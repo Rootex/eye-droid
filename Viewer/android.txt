@@ -1,0 +1,3 @@
+title=Viewer
+author=Sotaya
+orientation=landscape
