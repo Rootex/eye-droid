@@ -6,9 +6,7 @@ and sms.
 It is developed in a modular way so the system is loosely coupled.
 
 Author: Sotaya Yakubu
-Email: sotayamy@yahoo.co.uk 
-
-Simple calculator in java, with swing.
+Email: emeraldlinux@gmail.com
 
 LICENSE
 =======
