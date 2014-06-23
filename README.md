@@ -6,6 +6,7 @@ and sms.
 It is developed in a modular way so the system is loosely coupled.
 
 Author: Sotaya Yakubu
+
 Email: emeraldlinux@gmail.com
 
 LICENSE
