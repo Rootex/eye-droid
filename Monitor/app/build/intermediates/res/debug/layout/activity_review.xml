@@ -1,0 +1,14 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/log"
+        android:textSize="15sp"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+</ScrollView><!-- From: file:/home/plaix/AndroidStudioProjects/Monitor/app/src/main/res/layout/activity_review.xml -->
