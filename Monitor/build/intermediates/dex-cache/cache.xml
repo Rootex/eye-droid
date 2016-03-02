@@ -2,32 +2,32 @@
 <items version="2" >
 
     <item
-        jar="/home/plaix/AndroidStudioProjects/Monitor/app/libs/additionnal.jar"
+        jar="/home/plaix/AndroidStudioProjects/eye-droid/Monitor/app/libs/additionnal.jar"
         jumboMode="false"
         revision="23.0.0 rc2"
         sha1="bd9e8dc422bb8c8405359947fe9f4282b49f57f4">
-        <dex dex="/home/plaix/AndroidStudioProjects/Monitor/app/build/intermediates/pre-dexed/debug/additionnal-1f230eb54823359f3ef72617ee67894acdde177f.jar" />
+        <dex dex="/home/plaix/AndroidStudioProjects/eye-droid/Monitor/app/build/intermediates/pre-dexed/debug/additionnal-210da290351ebe07abc127b9aba3747cc23f83cf.jar" />
+    </item>
+    <item
+        jar="/home/plaix/AndroidStudioProjects/eye-droid/Monitor/app/libs/mail.jar"
+        jumboMode="false"
+        revision="23.0.0 rc2"
+        sha1="428e267abff0d10802ccde86b915da2c20471160">
+        <dex dex="/home/plaix/AndroidStudioProjects/eye-droid/Monitor/app/build/intermediates/pre-dexed/debug/mail-10206e92d16b7617ff93781411a5debeb1212d10.jar" />
     </item>
     <item
         jar="/home/plaix/Android/Sdk/extras/android/m2repository/com/android/support/support-v4/18.0.0/support-v4-18.0.0.jar"
         jumboMode="false"
         revision="23.0.0 rc2"
         sha1="44ec51e9d395a47aab135e5e1b556c0007442156">
-        <dex dex="/home/plaix/AndroidStudioProjects/Monitor/app/build/intermediates/pre-dexed/debug/support-v4-18.0.0-5c9521c9222a7cd35d3ddad82697d5e69a7ae36b.jar" />
+        <dex dex="/home/plaix/AndroidStudioProjects/eye-droid/Monitor/app/build/intermediates/pre-dexed/debug/support-v4-18.0.0-5c9521c9222a7cd35d3ddad82697d5e69a7ae36b.jar" />
     </item>
     <item
-        jar="/home/plaix/AndroidStudioProjects/Monitor/app/libs/activation.jar"
+        jar="/home/plaix/AndroidStudioProjects/eye-droid/Monitor/app/libs/activation.jar"
         jumboMode="false"
         revision="23.0.0 rc2"
         sha1="d1257cbff6faa44c1f325ae0d9413522d4644383">
-        <dex dex="/home/plaix/AndroidStudioProjects/Monitor/app/build/intermediates/pre-dexed/debug/activation-c83bac22670338ee8738f6e3c483119260ce9a60.jar" />
-    </item>
-    <item
-        jar="/home/plaix/AndroidStudioProjects/Monitor/app/libs/mail.jar"
-        jumboMode="false"
-        revision="23.0.0 rc2"
-        sha1="428e267abff0d10802ccde86b915da2c20471160">
-        <dex dex="/home/plaix/AndroidStudioProjects/Monitor/app/build/intermediates/pre-dexed/debug/mail-d4fca8d6158ebba5cef503973e35ecc0e1cff0b9.jar" />
+        <dex dex="/home/plaix/AndroidStudioProjects/eye-droid/Monitor/app/build/intermediates/pre-dexed/debug/activation-da7a0de2aa1b7eedd2e4b14e666cd79d33139d98.jar" />
     </item>
 
 </items>
