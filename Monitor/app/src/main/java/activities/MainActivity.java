@@ -1,12 +1,17 @@
 package activities;
 
 import com.Server.camerapreview.R;
+
+import android.app.ActionBar;
+import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -25,6 +30,7 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_list_item);
+
 
 		preview = (ImageButton) findViewById(R.id.imageButton1);
 		review = (ImageButton) findViewById(R.id.imageButton2);
@@ -96,30 +102,8 @@ public class MainActivity extends Activity {
 	// Handling the back key press.
 	@Override
 	public void onBackPressed() {
-
-		AlertDialog.Builder alertbox = new AlertDialog.Builder(this);
-		alertbox.setTitle("Warining!");
-		alertbox.setMessage("Are you sure you want to exit?");
-
-		alertbox.setPositiveButton("Yes",
-				new DialogInterface.OnClickListener() {
-					public void onClick(DialogInterface arg0, int arg1) {
-						onDestroy();
-						Intent intent = new Intent(Intent.ACTION_MAIN);
-						intent.addCategory(Intent.CATEGORY_HOME);
-						intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-						startActivity(intent);
-						finish();
-					}
-				});
-
-		alertbox.setNegativeButton("No", new DialogInterface.OnClickListener() {
-			public void onClick(DialogInterface arg0, int arg1) {
-			}
-		});
-
-		alertbox.show();
-
+		finish();
+		startActivity(new Intent(this, HomeActivity.class));
 	}
 
 }

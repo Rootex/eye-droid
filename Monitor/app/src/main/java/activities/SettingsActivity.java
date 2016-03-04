@@ -1,18 +1,23 @@
 package activities;
 
 import com.Server.camerapreview.R;
+
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MenuItem.OnMenuItemClickListener;
+import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class SettingsActivity extends Activity {
+public class SettingsActivity extends MainActivityMemories {
 
 	private EditText email;
 	private EditText password;
@@ -26,7 +31,11 @@ public class SettingsActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_settings);
+		LayoutInflater inflater = (LayoutInflater) this
+				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		View contentView = inflater.inflate(R.layout.activity_settings, null, false);
+		drawerLayout.addView(contentView, 0);
+//		setContentView(R.layout.activity_settings);
 		
 		
 		email = (EditText) findViewById(R.id.editText1);
@@ -83,4 +92,9 @@ public class SettingsActivity extends Activity {
 		return true;
 	}
 
+	@Override
+	public void onBackPressed() {
+		finish();
+		startActivity(new Intent(this, HomeActivity.class));
+	}
 }

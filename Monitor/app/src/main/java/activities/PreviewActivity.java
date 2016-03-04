@@ -9,6 +9,8 @@ import java.util.logging.Logger;
 import notifier.Mail;
 import logger.LoggerService;
 import com.Server.camerapreview.R;
+
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.ImageFormat;
@@ -23,6 +25,7 @@ import android.os.Bundle;
 import android.os.StrictMode;
 import android.telephony.SmsManager;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
@@ -36,7 +39,7 @@ import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.SharedPreferences;
 
-public class PreviewActivity extends Activity implements
+public class PreviewActivity extends MainActivityMemories implements
 		SurfaceHolder.Callback, Camera.PreviewCallback {
 
 	private static String DELIVERED = "SMS_DELIVERED";
@@ -71,7 +74,10 @@ public class PreviewActivity extends Activity implements
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.preview);
+		LayoutInflater inflater = (LayoutInflater) this
+				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		View contentView = inflater.inflate(R.layout.preview, null, false);
+		drawerLayout.addView(contentView, 0);
 
 		msg = "Application started";
 		sendMsg(msg, "start");
@@ -110,7 +116,7 @@ public class PreviewActivity extends Activity implements
 	public void onBackPressed() {
 		surfaceDestroyed(this.surfaceHolder);
 		finish();
-		startActivity(new Intent(this, MainActivity.class));
+		startActivity(new Intent(this, HomeActivity.class));
 	}
 
 	@Override

@@ -34,20 +34,6 @@ public class SplashActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_splash);
 		startAnimation();
-//		TimerTask task = new TimerTask(){
-//
-//			@Override
-//			public void run() {
-//				finish();
-//				Intent mainIntent = new Intent().setClass(SplashActivity.this,
-//						MainActivity.class);
-//				startActivity(mainIntent);
-//			}
-//
-//        };
-//
-//        Timer timer = new Timer();
-//        timer.schedule(task, delay);
 	}
 
     private void startAnimation() {
@@ -72,7 +58,7 @@ public class SplashActivity extends Activity {
                         sleep(100);
                         waited += 100;
                     }
-                    Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+                    Intent intent = new Intent(SplashActivity.this, MainActivityMemories.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                     startActivity(intent);
                     SplashActivity.this.finish();

@@ -4,14 +4,18 @@
     <eat-comment/>
     <color name="black">#000000</color>
     <color name="blue">#0000FF</color>
+    <color name="grey_main">#EDEDED</color>
     <color name="white">#FFFFFF</color>
     <string name="app_name">eyedroid</string>
     <string name="capture">Capture</string>
     <string name="delay">Set delay (Sec)</string>
     <string name="description"/>
+    <string name="drawer_close">Close Drawer</string>
+    <string name="drawer_open">Open Drawer</string>
     <string name="email">Email (GMAIL)</string>
     <string name="email_check">Notify by Email</string>
     <string name="face">No face found</string>
+    <string name="home_activity">Feed</string>
     <string name="icon_description">icon</string>
     <string name="intro">Monitoring \n System</string>
     <string name="log"/>

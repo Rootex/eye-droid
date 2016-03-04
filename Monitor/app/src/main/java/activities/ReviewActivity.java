@@ -11,19 +11,23 @@ import com.Server.camerapreview.R;
 
 import database.LogHelper;
 import database.LogModel;
+
+import android.content.Context;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MenuItem.OnMenuItemClickListener;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 
-public class ReviewActivity extends Activity {
+public class ReviewActivity extends MainActivityMemories {
 
 	private TextView logRecord;
 	private List<LogModel> log;
@@ -36,7 +40,10 @@ public class ReviewActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_review);
+		LayoutInflater inflater = (LayoutInflater) this
+				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		View contentView = inflater.inflate(R.layout.activity_review, null, false);
+		drawerLayout.addView(contentView, 0);
         
         logRecord = (TextView) findViewById(R.id.textView1);
         
@@ -91,7 +98,7 @@ public class ReviewActivity extends Activity {
  	@Override
  	public void onBackPressed(){
  		finish();
- 		startActivity(new Intent(this, MainActivity.class));
+ 		startActivity(new Intent(this, HomeActivity.class));
  	}
  	
  	public void sendMail(String email, String password){
