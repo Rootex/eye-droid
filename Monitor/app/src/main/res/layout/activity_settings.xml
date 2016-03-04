@@ -6,8 +6,10 @@
     tools:context=".SettingsActivity" >
 
     <RelativeLayout
-        android:layout_width="fill_parent"
-        android:layout_height="284dp" >
+        android:layout_width="wrap_content"
+        android:layout_height="484dp"
+        android:layout_gravity="center"
+        android:padding="40dp">
 
         <EditText
             android:id="@+id/editText1"
@@ -16,7 +18,8 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_marginLeft="21dp"
-            android:layout_marginTop="17dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginBottom="10dp"
             android:background="@color/white"
             android:ems="10"
             android:hint="@string/email"
@@ -29,6 +32,7 @@
             android:layout_alignLeft="@+id/editText1"
             android:layout_below="@+id/editText1"
             android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"
             android:background="@color/white"
             android:ems="10"
             android:hint="@string/password"
@@ -41,6 +45,7 @@
             android:layout_alignLeft="@+id/editText2"
             android:layout_below="@+id/editText2"
             android:layout_marginTop="14dp"
+            android:layout_marginBottom="10dp"
             android:background="@color/white"
             android:ems="10"
             android:hint="@string/phone"
@@ -53,6 +58,7 @@
             android:layout_alignLeft="@+id/editText4"
             android:layout_below="@+id/editText4"
             android:layout_marginLeft="34dp"
+            android:layout_marginBottom="10dp"
             android:text="@string/email_check"
             android:textColor="@color/white" />
 

@@ -1,6 +1,8 @@
 package activities;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,7 +14,7 @@ import com.Server.camerapreview.R;
 /**
  * Created by plaix on 3/4/16.
  */
-public class HomeActivity extends MainActivityMemories{
+public class HomeActivity extends BaseActivity {
     private TextView updates;
 
     @Override
@@ -30,7 +32,28 @@ public class HomeActivity extends MainActivityMemories{
 
     @Override
     public void onBackPressed() {
-        finish();
-        startActivity(new Intent(this, MainActivityMemories.class));
+        AlertDialog.Builder alertbox = new AlertDialog.Builder(this);
+        alertbox.setTitle("Warining!");
+        alertbox.setMessage("Are you sure you want to exit?");
+
+        alertbox.setPositiveButton("Yes",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface arg0, int arg1) {
+                        onDestroy();
+                        Intent intent = new Intent(Intent.ACTION_MAIN);
+                        intent.addCategory(Intent.CATEGORY_HOME);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(intent);
+                        finish();
+                    }
+                });
+
+        alertbox.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface arg0, int arg1) {
+            }
+        });
+
+        alertbox.show();
+
     }
 }

@@ -21,17 +21,18 @@ public final class R {
         public static final int white=0x7f060003;
     }
     public static final class drawable {
-        public static final int background=0x7f020000;
-        public static final int download=0x7f020001;
-        public static final int ic_camera=0x7f020002;
-        public static final int ic_home=0x7f020003;
-        public static final int ic_launcher=0x7f020004;
-        public static final int ic_menu=0x7f020005;
-        public static final int ic_preview=0x7f020006;
-        public static final int ic_review=0x7f020007;
-        public static final int ic_settings=0x7f020008;
-        public static final int ic_viewer=0x7f020009;
-        public static final int icon=0x7f02000a;
+        public static final int ad=0x7f020000;
+        public static final int background=0x7f020001;
+        public static final int download=0x7f020002;
+        public static final int ic_camera=0x7f020003;
+        public static final int ic_home=0x7f020004;
+        public static final int ic_launcher=0x7f020005;
+        public static final int ic_menu=0x7f020006;
+        public static final int ic_preview=0x7f020007;
+        public static final int ic_review=0x7f020008;
+        public static final int ic_settings=0x7f020009;
+        public static final int ic_viewer=0x7f02000a;
+        public static final int icon=0x7f02000b;
     }
     public static final class id {
         public static final int button1=0x7f090019;
@@ -71,7 +72,7 @@ public final class R {
         public static final int activity_splash=0x7f030005;
         public static final int drawer_list_item=0x7f030006;
         public static final int fragment_version=0x7f030007;
-        public static final int preview=0x7f030008;
+        public static final int activity_capture =0x7f030008;
     }
     public static final class menu {
         public static final int activity_main=0x7f080000;

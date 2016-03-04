@@ -41,20 +41,20 @@
         </activity>
 
         <activity
-            android:name="activities.PreviewActivity"
+            android:name="activities.CaptureActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
 
         <activity
-            android:name="activities.MainActivityMemories"
+            android:name="activities.BaseActivity"
             android:label="@string/title_activity_main"
             android:screenOrientation="portrait" >
         </activity>
 
         <activity
-            android:name="activities.MainActivity"
+            android:name="activities.ModulesActivity"
             android:label="@string/title_activity_main"
             android:screenOrientation="portrait" >
         </activity>

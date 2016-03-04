@@ -2,24 +2,19 @@ package activities;
 
 import com.Server.camerapreview.R;
 
-import android.app.ActionBar;
-import android.app.Fragment;
-import android.app.FragmentTransaction;
+import android.content.Context;
 import android.os.Bundle;
-import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.support.v4.app.FragmentActivity;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-public class MainActivity extends Activity {
+public class ModulesActivity extends BaseActivity {
 
 	private ImageButton preview;
 	private ImageButton review;
@@ -29,7 +24,10 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_list_item);
+		LayoutInflater inflater = (LayoutInflater) this
+				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		View contentView = inflater.inflate(R.layout.activity_list_item, null, false);
+		drawerLayout.addView(contentView, 0);
 
 
 		preview = (ImageButton) findViewById(R.id.imageButton1);
@@ -72,7 +70,7 @@ public class MainActivity extends Activity {
 				try{
 				startActivity(appStartIntent);
 				}catch(Exception x){
-					Log.d("MainActivity", "Application not Found: "+x.getMessage());
+					Log.d("ModulesActivity", "Application not Found: "+x.getMessage());
 					Toast.makeText(getApplicationContext(), "Module not installed", Toast.LENGTH_SHORT).show();
 				}
 
@@ -88,7 +86,7 @@ public class MainActivity extends Activity {
 	}
 
 	public void startPreviewActivity() {
-		startActivity(new Intent(this, PreviewActivity.class));
+		startActivity(new Intent(this, CaptureActivity.class));
 	}
 
 	public void startReviewActivity() {

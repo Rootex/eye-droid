@@ -19,7 +19,7 @@ public class Output {
 	
 	private String path;
 	//Saving image to SD card in the click of the capture button 
-	//in PreviewActivity
+	//in CaptureActivity
 	public void saveFrame(Bitmap image) {
 		try {
 			String root = Environment.getExternalStorageDirectory().toString();

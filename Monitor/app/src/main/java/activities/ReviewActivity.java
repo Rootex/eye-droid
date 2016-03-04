@@ -23,11 +23,10 @@ import android.view.MenuItem.OnMenuItemClickListener;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 
-public class ReviewActivity extends MainActivityMemories {
+public class ReviewActivity extends BaseActivity {
 
 	private TextView logRecord;
 	private List<LogModel> log;

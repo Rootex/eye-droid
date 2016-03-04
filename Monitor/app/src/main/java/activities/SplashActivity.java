@@ -1,8 +1,5 @@
 package activities;
 
-import java.util.Timer;
-import java.util.TimerTask;
-
 import com.Server.camerapreview.R;
 
 import android.graphics.PixelFormat;
@@ -14,8 +11,6 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-
-import static com.Server.camerapreview.R.anim.translate;
 
 public class SplashActivity extends Activity {
 
@@ -58,7 +53,7 @@ public class SplashActivity extends Activity {
                         sleep(100);
                         waited += 100;
                     }
-                    Intent intent = new Intent(SplashActivity.this, MainActivityMemories.class);
+                    Intent intent = new Intent(SplashActivity.this, BaseActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                     startActivity(intent);
                     SplashActivity.this.finish();

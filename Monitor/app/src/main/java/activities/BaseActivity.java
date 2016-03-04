@@ -1,9 +1,6 @@
 package activities;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.FragmentManager;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -21,14 +18,15 @@ import com.Server.camerapreview.R;
 /**
  * Created by plaix on 3/4/16.
  */
-public class MainActivityMemories extends Activity{
-    DrawerLayout drawerLayout;
+public class BaseActivity extends Activity{
+    protected DrawerLayout drawerLayout;
     private ListView drawerList;
     private ActionBarDrawerToggle drawerToggle;
 
     private CharSequence drawerTitle;
     private CharSequence title;
-
+    private static boolean isLaunch = true;
+//    private ImageView ad;
     String[] androidVersionArray;
 
     @Override
@@ -49,6 +47,8 @@ public class MainActivityMemories extends Activity{
         drawerList.setOnItemClickListener(new DrawerItemClickListener());
 
         getActionBar().setDisplayHomeAsUpEnabled(true);
+        getActionBar().setDisplayShowHomeEnabled(false);
+        getActionBar().setDisplayShowTitleEnabled(true);
 
         drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.drawable.ic_menu,
                 R.string.drawer_open, R.string.drawer_close){
@@ -65,38 +65,19 @@ public class MainActivityMemories extends Activity{
         };
 
         drawerLayout.setDrawerListener(drawerToggle);
+
+        if(isLaunch){
+            isLaunch = false;
+            selectItem(0);
+        }
+
+//        ad = (ImageView) findViewById(R.id.ad);
+//        ad.setImageResource(R.drawable.ad);
 //        if(savedInstanceState == null){
 //            selectItem(0);
 //        }
-
     }
 
-    @Override
-    public void onBackPressed() {
-        AlertDialog.Builder alertbox = new AlertDialog.Builder(this);
-        alertbox.setTitle("Warining!");
-        alertbox.setMessage("Are you sure you want to exit?");
-
-        alertbox.setPositiveButton("Yes",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface arg0, int arg1) {
-                        onDestroy();
-                        Intent intent = new Intent(Intent.ACTION_MAIN);
-                        intent.addCategory(Intent.CATEGORY_HOME);
-                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                        startActivity(intent);
-                        finish();
-                    }
-                });
-
-        alertbox.setNegativeButton("No", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface arg0, int arg1) {
-            }
-        });
-
-        alertbox.show();
-
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -123,6 +104,7 @@ public class MainActivityMemories extends Activity{
                                 long id) {
             selectItem(position);
         }
+
     }
 
     protected void selectItem(int position){
@@ -130,46 +112,50 @@ public class MainActivityMemories extends Activity{
         switch (position){
             //home
             case 0:
-                launch = new Intent(MainActivityMemories.this, HomeActivity.class);
+                launch = new Intent(BaseActivity.this, HomeActivity.class);
+                launch.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(launch);
                 break;
             //modules
             case 1:
-                launch = new Intent(MainActivityMemories.this, MainActivity.class);
+                launch = new Intent(BaseActivity.this, ModulesActivity.class);
                 startActivity(launch);
                 break;
             //tags
             case 2:
-                launch = new Intent(MainActivityMemories.this, ReviewActivity.class);
+                launch = new Intent(BaseActivity.this, ReviewActivity.class);
                 startActivity(launch);
                 break;
             //memories
             case 3:
-                launch = new Intent(MainActivityMemories.this, ReviewActivity.class);
+                launch = new Intent(BaseActivity.this, ReviewActivity.class);
                 startActivity(launch);
                 break;
             //capture
             case 4:
-                launch = new Intent(MainActivityMemories.this, PreviewActivity.class);
+                launch = new Intent(BaseActivity.this, CaptureActivity.class);
                 startActivity(launch);
                 break;
             //settings
             case 5:
-                launch = new Intent(MainActivityMemories.this, SettingsActivity.class);
+                launch = new Intent(BaseActivity.this, SettingsActivity.class);
                 startActivity(launch);
                 break;
             default:
+                break;
         }
 //        // Update Title on action bar
-//        drawerList.setItemChecked(position, true);
-//        setTitle(androidVersionArray[position]);
-//        drawerLayout.closeDrawer(drawerList);
+        drawerList.setItemChecked(position, true);
+        setTitle(androidVersionArray[position]);
+        drawerLayout.closeDrawer(drawerList);
+
+
     }
 
     @Override
-    public void setTitle(CharSequence title) {
-        this.title = title;
-        getActionBar().setTitle(this.title);
+    public void setTitle(CharSequence title_) {
+        title = title_;
+        getActionBar().setTitle(title);
     }
 
     @Override

@@ -34,12 +34,11 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.app.Activity;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.SharedPreferences;
 
-public class PreviewActivity extends MainActivityMemories implements
+public class CaptureActivity extends BaseActivity implements
 		SurfaceHolder.Callback, Camera.PreviewCallback {
 
 	private static String DELIVERED = "SMS_DELIVERED";
@@ -76,7 +75,7 @@ public class PreviewActivity extends MainActivityMemories implements
 		super.onCreate(savedInstanceState);
 		LayoutInflater inflater = (LayoutInflater) this
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		View contentView = inflater.inflate(R.layout.preview, null, false);
+		View contentView = inflater.inflate(R.layout.activity_capture, null, false);
 		drawerLayout.addView(contentView, 0);
 
 		msg = "Application started";
@@ -128,16 +127,16 @@ public class PreviewActivity extends MainActivityMemories implements
 			} catch (Exception x) {
 				camera.release();
 				camera = null;
-				Log.d(PreviewActivity.class.getName(),
+				Log.d(CaptureActivity.class.getName(),
 						"Error in surface created: [" + x.getMessage() + "]");
 			}
 		} else
-			Log.d(PreviewActivity.class.getName(), "Camera null");
+			Log.d(CaptureActivity.class.getName(), "Camera null");
 	}
 
 	// class name require for logs
 	public String activityName() {
-		return PreviewActivity.class.getName();
+		return CaptureActivity.class.getName();
 	}
 
 	// beginning of surface changed method implementation
@@ -166,7 +165,7 @@ public class PreviewActivity extends MainActivityMemories implements
 
 				parameters.setPreviewSize(size.width, size.height);
 				// parameters.setPictureFormat();
-				// Log.d(PreviewActivity.class.getName(),
+				// Log.d(CaptureActivity.class.getName(),
 				// "size: "+surfaceHolder;
 
 				// setting camera parameters
@@ -348,7 +347,7 @@ public class PreviewActivity extends MainActivityMemories implements
 				Toast.makeText(getApplicationContext(), "mail failed",
 						Toast.LENGTH_SHORT).show();
 		} catch (Exception x) {
-			Log.e(PreviewActivity.class.getName(),
+			Log.e(CaptureActivity.class.getName(),
 					"Exception: " + x.getMessage());
 			x.printStackTrace();
 		}
