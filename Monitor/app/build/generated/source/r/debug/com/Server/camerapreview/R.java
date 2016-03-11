@@ -26,16 +26,20 @@ public final class R {
         public static final int ad=0x7f020000;
         public static final int background=0x7f020001;
         public static final int download=0x7f020002;
-        public static final int ic_camera=0x7f020003;
-        public static final int ic_home=0x7f020004;
-        public static final int ic_launcher=0x7f020005;
-        public static final int ic_menu=0x7f020006;
-        public static final int ic_preview=0x7f020007;
-        public static final int ic_review=0x7f020008;
-        public static final int ic_settings=0x7f020009;
-        public static final int ic_viewer=0x7f02000a;
-        public static final int icon=0x7f02000b;
-        public static final int user_image_placeholder=0x7f02000c;
+        public static final int ic_about=0x7f020003;
+        public static final int ic_camera=0x7f020004;
+        public static final int ic_home=0x7f020005;
+        public static final int ic_launcher=0x7f020006;
+        public static final int ic_memories=0x7f020007;
+        public static final int ic_menu=0x7f020008;
+        public static final int ic_modules=0x7f020009;
+        public static final int ic_preview=0x7f02000a;
+        public static final int ic_review=0x7f02000b;
+        public static final int ic_settings=0x7f02000c;
+        public static final int ic_tag=0x7f02000d;
+        public static final int ic_viewer=0x7f02000e;
+        public static final int icon=0x7f02000f;
+        public static final int user_image_placeholder=0x7f020010;
     }
     public static final class id {
         public static final int button1=0x7f080001;
@@ -55,8 +59,9 @@ public final class R {
         public static final int imageButton4=0x7f08000b;
         public static final int imageView1=0x7f080018;
         public static final int lin_lay=0x7f080017;
+        public static final int menuTitle=0x7f080019;
         public static final int news_feed=0x7f080004;
-        public static final int rowTextView=0x7f080019;
+        public static final int rowTextView=0x7f08001a;
         public static final int scrollView1=0x7f080016;
         public static final int surfaceView=0x7f080000;
         public static final int textView1=0x7f080002;

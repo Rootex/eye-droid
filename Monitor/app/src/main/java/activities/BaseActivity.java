@@ -15,6 +15,8 @@ import android.widget.ListView;
 
 import com.Server.camerapreview.R;
 
+import java.util.ArrayList;
+
 /**
  * Created by plaix on 3/4/16.
  */
@@ -28,6 +30,7 @@ public class BaseActivity extends Activity{
     private static boolean isLaunch = true;
 //    private ImageView ad;
     String[] androidVersionArray;
+    ArrayList<MenuItems> menuData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -37,6 +40,16 @@ public class BaseActivity extends Activity{
         title = drawerTitle = getTitle();
 
         androidVersionArray = new String[] { "Activity Feed", "Modules", "Tags", "Memories", "Capture", "Settings", "About" };
+
+        menuData = new ArrayList<MenuItems>();
+        menuData.add(new MenuItems(R.drawable.ic_home, "Activity Feed"));
+        menuData.add(new MenuItems(R.drawable.ic_modules, "Modules"));
+        menuData.add(new MenuItems(R.drawable.ic_tag, "Tags"));
+        menuData.add(new MenuItems(R.drawable.ic_memories, "Memories"));
+        menuData.add(new MenuItems(R.drawable.ic_preview, "Capture"));
+        menuData.add(new MenuItems(R.drawable.ic_settings, "Settings"));
+        menuData.add(new MenuItems(R.drawable.ic_about, "About"));
+
 
         drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
         drawerList = (ListView) findViewById(R.id.drawerList);
