@@ -28,7 +28,7 @@
         android:allowBackup="true"
         android:icon="@drawable/icon"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/MyAppTheme" >
         <service
             android:name="logger.LoggerService"
             android:label="@string/service" >
@@ -55,7 +55,7 @@
 
         <activity
             android:name="activities.ModulesActivity"
-            android:label="@string/title_activity_main"
+            android:label="@string/moduules_activity"
             android:screenOrientation="portrait" >
         </activity>
         
@@ -65,14 +65,15 @@
         </activity>
         
         <activity
-            android:name="activities.SettingsActivity"
+            android:name="activities.PreferencesActivity"
             android:label="@string/title_activity_settings" >
         </activity>
         
         <activity
             android:name="activities.SplashActivity"
             android:label="@string/title_activity_splash"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

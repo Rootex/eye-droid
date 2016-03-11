@@ -36,7 +36,7 @@ public class BaseActivity extends Activity{
 
         title = drawerTitle = getTitle();
 
-        androidVersionArray = new String[] { "Feed", "Modules", "Tags", "Memories", "Capture", "Settings" };
+        androidVersionArray = new String[] { "Activity Feed", "Modules", "Tags", "Memories", "Capture", "Settings", "About" };
 
         drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
         drawerList = (ListView) findViewById(R.id.drawerList);
@@ -137,9 +137,13 @@ public class BaseActivity extends Activity{
                 break;
             //settings
             case 5:
-                launch = new Intent(BaseActivity.this, SettingsActivity.class);
+                launch = new Intent(BaseActivity.this, PreferencesActivity.class);
                 startActivity(launch);
                 break;
+            //About
+            case 6:
+                launch = new Intent(BaseActivity.this, ReviewActivity.class);
+                startActivity(launch);
             default:
                 break;
         }

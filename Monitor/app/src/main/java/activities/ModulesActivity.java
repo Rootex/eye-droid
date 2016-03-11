@@ -94,7 +94,7 @@ public class ModulesActivity extends BaseActivity {
 	}
 
 	public void startSettingsActivity() {
-		startActivity(new Intent(this, SettingsActivity.class));
+		startActivity(new Intent(this, PreferencesActivity.class));
 	}
 
 	// Handling the back key press.

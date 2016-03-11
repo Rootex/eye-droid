@@ -7,15 +7,21 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.Server.camerapreview.R;
+
+import java.util.ArrayList;
 
 /**
  * Created by plaix on 3/4/16.
  */
 public class HomeActivity extends BaseActivity {
-    private TextView updates;
+    private ListView updates;
+    private ArrayList<String> recent;
+    private ArrayAdapter<String> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,9 +31,19 @@ public class HomeActivity extends BaseActivity {
         View contentView = inflater.inflate(R.layout.activity_home, null, false);
         drawerLayout.addView(contentView, 0);
 
-        updates = (TextView) findViewById(R.id.updates);
-        updates.setText("No current Memories");
+        updates = (ListView) findViewById(R.id.news_feed);
 
+        recent = new ArrayList<String>();
+        recent.add("No recent activity");
+
+        adapter = new ArrayAdapter<String>(this, R.layout.feed_row, recent);
+        updates.setAdapter(adapter);
+
+    }
+
+    public void addItem(View v){
+        recent.add("No recent activity");
+        adapter.notifyDataSetChanged();
     }
 
     @Override
